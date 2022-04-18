@@ -1,16 +1,26 @@
-# This is a sample Python script.
+import tkinter as tk
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+calculation_string = ''
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+def add_to_calculation(symbol):
+    global calculation_string
+    calculation_string += str(symbol)
+    text_result.delete(1.0, 'end')
+    text_result.insert(1.0, calculation_string)
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
+def evaluate_calculation():
+    pass
+
+
+def clear_field():
+    pass
+
+
+root = tk.Tk()
+root.geometry("300x275")
+text_result = tk.Text(root, height=2, width=16, font=('Arial', 24))
+text_result.grid(columnspan=5)
+
+root.mainloop()
