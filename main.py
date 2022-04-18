@@ -28,7 +28,10 @@ def clear_field():
 
 
 root = tk.Tk()
+root.title('Calculator v.1.1')
+
 root.geometry("300x275")
+root.resizable(width=False, height=False)
 text_result = tk.Text(root, height=2, width=16, font=('Arial', 24))
 text_result.grid(columnspan=5)
 
@@ -83,7 +86,7 @@ btn_close.grid(row=5, column=3)
 btn_eq = tk.Button(root, text='=', command=lambda: evaluate_calculation(), width=11, font=('Arial', 14))
 btn_eq.grid(row=6, column=3, columnspan=2)
 
-btn_clear = tk.Button(root, text='C', command=clear_field, width=11, font=('Arial', 14))
+btn_clear = tk.Button(root, text='C', command=clear_field, width=11, font=('Arial', 14), activebackground='red')
 btn_clear.grid(row=6, column=1, columnspan=2)
 
 root.mainloop()
