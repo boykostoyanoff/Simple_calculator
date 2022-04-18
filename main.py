@@ -68,18 +68,22 @@ btn_plus.grid(row=2, column=4)
 btn_minus = tk.Button(root, text='-', command=lambda: add_to_calculation('-'), width=5, font=('Arial', 14))
 btn_minus.grid(row=3, column=4)
 
-btn_mul = tk.Button(root, text='*', command=lambda: add_to_calculation('+'), width=5, font=('Arial', 14))
+btn_mul = tk.Button(root, text='*', command=lambda: add_to_calculation('*'), width=5, font=('Arial', 14))
 btn_mul.grid(row=4, column=4)
 
 btn_div = tk.Button(root, text='/', command=lambda: add_to_calculation('/'), width=5, font=('Arial', 14))
 btn_div.grid(row=5, column=4)
 
+btn_open = tk.Button(root, text='(', command=lambda: add_to_calculation('('), width=5, font=('Arial', 14))
+btn_open.grid(row=5, column=1)
 
-btn_clear = tk.Button(root, text='C', command=lambda: clear_field(), width=5, font=('Arial', 14))
-btn_clear.grid(row=5, column=1)
+btn_close = tk.Button(root, text=')', command=lambda: add_to_calculation(')'), width=5, font=('Arial', 14))
+btn_close.grid(row=5, column=3)
 
+btn_eq = tk.Button(root, text='=', command=lambda: evaluate_calculation(), width=11, font=('Arial', 14))
+btn_eq.grid(row=6, column=3, columnspan=2)
 
-btn_eq = tk.Button(root, text='=', command=lambda: evaluate_calculation(), width=5, font=('Arial', 14))
-btn_eq.grid(row=5, column=3)
+btn_clear = tk.Button(root, text='C', command=clear_field, width=11, font=('Arial', 14))
+btn_clear.grid(row=6, column=1, columnspan=2)
 
 root.mainloop()
